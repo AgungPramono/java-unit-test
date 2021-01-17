@@ -3,6 +3,8 @@ package com.agung.belajar.unittest.service;
 import com.agung.belajar.unittest.data.Person;
 import com.agung.belajar.unittest.repository.PersonRepository;
 
+import java.util.UUID;
+
 public class PersonService {
 
     private PersonRepository personRepository;
@@ -18,5 +20,11 @@ public class PersonService {
         }else {
             throw new IllegalArgumentException("Person Not Found");
         }
+    }
+
+    public Person register(String name){
+        Person person = new Person(UUID.randomUUID().toString(), name);
+        personRepository.insert(person);
+        return person;
     }
 }
