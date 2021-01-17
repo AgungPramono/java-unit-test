@@ -2,8 +2,6 @@ package com.agung.belajar.unittest;
 
 import com.agung.belajar.unittest.generator.SimpleDisplayNameGenerator;
 import org.junit.jupiter.api.*;
-import org.junit.jupiter.api.condition.EnabledOnOs;
-import org.junit.jupiter.api.condition.OS;
 import org.opentest4j.TestAbortedException;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -11,9 +9,7 @@ import static org.junit.jupiter.api.Assumptions.*;
 
 @DisplayNameGeneration(SimpleDisplayNameGenerator.class)
 @Tag("integration-test")
-public class CalculatorTest {
-
-    private Calculator calculator = new Calculator();
+public class CalculatorTest extends AbstractCalculatorTest {
 
     @BeforeAll
     public static void beforeAll(){
