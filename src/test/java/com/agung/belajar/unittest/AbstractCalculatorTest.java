@@ -31,6 +31,7 @@ public class AbstractCalculatorTest {
         Integer expected = a + b;
 
         Assertions.assertEquals(expected,result);
+        System.out.println(result);
 
     }
 }
